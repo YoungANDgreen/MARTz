@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css"> <!-- Corrected CSS file path -->
+  <title>Submissions</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/submissions">Submissions</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Forum Submissions</h1>
+  <ul class="submissions-list">
+    <% submissions.forEach(submission => { %>
+      <li>
+        <h2><%= submission.productName %></h2>
+        <p>SKU: <%= submission.productSKU %></p>
+        <p>Quantity: <%= submission.quantity %></p>
+        <p>Transaction Type: <%= submission.transactionType %></p>
+        <p>Contact Email: <%= submission.contactEmail %></p>
+        <p>Selling Price: <%= submission.sellingPrice %></p>
+        <p>Timestamp: <%= submission.timestamp %></p>
+        <% if (submission.image) { %>
+          <img src="/uploads/<%= submission.image %>" alt="Image">
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+  
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css"> <!-- Corrected CSS file path -->
+  <title>Forum Intake Form</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/submissions">Submissions</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Forum Intake Form</h1>
+  
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="productSKU">Product SKU:</label>
+      <input type="text" id="productSKU" name="productSKU" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Transaction Type:</label>
+      <input type="radio" id="selling" name="transactionType" value="Selling" required>
+      <label for="selling">Selling</label>
+      <input type="radio" id="buying" name="transactionType" value="Buying" required>
+      <label for="buying">Buying</label>
+    </div>
+    
+    <div class="form-group">
+      <label for="contactEmail">Contact Email:</label>
+      <input type="email" id="contactEmail" name="contactEmail" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="sellingPrice">Selling Price:</label>
+      <input type="number" id="sellingPrice" name="sellingPrice">
+    </div>
+    
+    <!-- Add the image attachment section -->
+    <div class="form-group">
+      <label for="image">Attach Image:</label>
+      <input type="file" id="image" name="image">
+    </div>
+    
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
